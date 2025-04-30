@@ -38,4 +38,4 @@ const bigNumber = 156165135162135165121651131564565652n;
 console.log(typeof bigNumber);
 
 console.log(typeof myFunction);
-//it says function, but it is called as object function
+//it says function, but it is called as object function.
