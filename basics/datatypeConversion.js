@@ -86,3 +86,8 @@ console.log(undefined < 0);
 console.log(undefined >= 0);
 // In JavaScript, undefined == 0 is false because undefined only equals null with ==.
 // In comparisons, undefined becomes NaN, so all relational checks like >, <, or >= return false.
+
+console.log("_____");
+
+//=== is used to check the equality considering the datastype as well
+console.log(2==="2")
