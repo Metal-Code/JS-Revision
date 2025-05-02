@@ -36,6 +36,11 @@ console.log(typeof temp);
 const id = 15;
 const bigNumber = 156165135162135165121651131564565652n;
 console.log(typeof bigNumber);
+console.log(bigNumber + 5);
+
+// you cannot directly mix BigInt and Number in arithmetic operations in JavaScrip
+// it will throw a typeError
+
 
 console.log(typeof myFunction);
 //it says function, but it is called as object function.
