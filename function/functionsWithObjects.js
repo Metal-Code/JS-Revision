@@ -21,3 +21,20 @@ function handleObject(anyobject)
     console.log(`Username is ${anyobject.name} and price is ${anyobject.price}`);
 }
 handleObject(user)
+
+handleObject({
+    name : "Metal",
+    price : "1 million"
+})
+
+// Can also pass objects as argument
+
+const arr = [200, 400, 600, 800]
+
+function returnsSecondValue(getArray)
+{
+    return getArray[1];
+}
+// Arrays as an argument
+
+console.log(returnsSecondValue(arr));
