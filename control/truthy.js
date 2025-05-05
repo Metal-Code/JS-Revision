@@ -42,7 +42,32 @@ if(Object.keys(emptyObj).length === 0)
 {
     console.log("Object is empty");
 }
-if(emptyObj.length === 0)
-{
-    console.log("Object is empty 11");
-}
+
+// console.log(false == 0);
+// console.log(false == '');
+// console.log(0 == '');
+
+// Nullish Coalescing Operator (??) 
+// Does safety check for null or undefined
+
+let val;
+val = 5 ?? 10
+console.log(val);
+
+val = null ?? 10
+console.log(val);
+
+val = undefined ?? 69
+console.log(val);
+
+val = null ?? 10 ?? 15
+console.log(val);
+// Will be assigned the first number
+
+// Terniary Operator
+
+// condition ? true : false
+
+const blueLagoon = 40
+blueLagoon < 30 ? console.log("Less than 30") : console.log("more than 30");
+
