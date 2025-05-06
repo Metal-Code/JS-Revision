@@ -4,22 +4,22 @@
 */
 /*
 
-🔁 for loop
+1. for loop
 Use: When you want full control using an index (start, stop, step).
 Working: You manually set the loop counter and how it increments.
 Works on: Arrays, Strings, anything index-based.
 
-🔁 for...in loop
+2. for...in loop
 Use: To loop over keys or property names, mostly in objects.
 Working: Goes through all enumerable properties (keys).
 Works on: Objects ✅, Arrays ⚠️ (but gives indexes, not values), Strings ✅ (gives character indexes).
 
-🔁 for...of loop
+3. for...of loop
 Use: To loop over values directly in iterable items.
 Working: Iterates each item (not key/index), great for clean value access.
 Works on: Arrays ✅, Strings ✅, Sets ✅, Maps ✅. ❌ Doesn’t work directly on plain objects.
 
-🔁 forEach()
+4. forEach()
 Use: Simple way to loop through array values and indexes using a callback.
 Working: Automatically passes value, index, and the array to the callback.
 Works on: Arrays ✅, array-like structures like NodeLists ✅. ❌ Not on plain objects or strings.
