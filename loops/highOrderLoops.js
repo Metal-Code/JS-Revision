@@ -1,3 +1,32 @@
+/*
+["", "", ""]
+[{}, {}, {}]
+*/
+/*
+
+🔁 for loop
+Use: When you want full control using an index (start, stop, step).
+Working: You manually set the loop counter and how it increments.
+Works on: Arrays, Strings, anything index-based.
+
+🔁 for...in loop
+Use: To loop over keys or property names, mostly in objects.
+Working: Goes through all enumerable properties (keys).
+Works on: Objects ✅, Arrays ⚠️ (but gives indexes, not values), Strings ✅ (gives character indexes).
+
+🔁 for...of loop
+Use: To loop over values directly in iterable items.
+Working: Iterates each item (not key/index), great for clean value access.
+Works on: Arrays ✅, Strings ✅, Sets ✅, Maps ✅. ❌ Doesn’t work directly on plain objects.
+
+🔁 forEach()
+Use: Simple way to loop through array values and indexes using a callback.
+Working: Automatically passes value, index, and the array to the callback.
+Works on: Arrays ✅, array-like structures like NodeLists ✅. ❌ Not on plain objects or strings.
+
+*/
+
+
 // 1. for of
 const arr = [1,2,3,4,5,6,7,8]
 for (const i of arr) 
@@ -10,6 +39,7 @@ for (const i of str)
 {
     // console.log(i);
 }
+
 
 // Maps
 // const map = new Map()
@@ -94,6 +124,7 @@ for (const key in map)
 }
 
 // For each of
+// **** Can't use break or continue in for each of loop ****
 const coding = ['java', 'pythin', 'c++', 'javascript', 'swift']
 
 // coding.forEach( function (item) {
@@ -117,22 +148,10 @@ const coding = ['java', 'pythin', 'c++', 'javascript', 'swift']
 // Complete syntax
 
 const code = [
-    {
-        name : "C++",
-        extension : "cpp"
-    },
-    {
-        name : "java",
-        extension : "java"
-    },
-    {
-        name : "javascript",
-        extension : "js"
-    },
-    {
-        name : "python",
-        extension : "py"
-    }
+    { name : "C++", extension : "cpp" },
+    { name : "java", extension : "java" },
+    { name : "javascript", extension : "js" },
+    { name : "python", extension : "py" }
 ]
 
 code.forEach( (item) => {
