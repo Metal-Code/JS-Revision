@@ -17,6 +17,7 @@ arr.pop()
 // console.log(arr[2]);
 
 const temp = arr.join()
+// Joins all elements of the array into a single string
 // console.log(arr);
 // console.log(typeof temp);
 
