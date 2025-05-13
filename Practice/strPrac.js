@@ -68,11 +68,108 @@ function maxCharCount(str)
     return maxChar;
 }
 
-console.log(maxCharCount("javascript"));
+// console.log(maxCharCount("javascript"));
 
 function rep(str) 
 {
     return str.replace(/ /g, "-");
 }
 
-console.log(rep("i love js"));  
+// console.log(rep("i love js"));  
+
+function anagrams(str1, str2)
+{
+    if(str1.length != str2.length)
+        return false;
+        
+    let freq1 = {}
+    let freq2 = {}
+    for(let i=0; i<str1.length; i++)
+    {
+        let char = str1[i];
+        if(freq1[char] === undefined)
+        {
+            freq1[char] = 1;
+        }
+        else
+        freq1[char]++;
+    }
+    for(let i=0; i<str2.length; i++)
+    {
+        let char = str2[i];
+        if(freq2[char] === undefined)
+        {
+            freq2[char] = 1;
+        }
+        else
+        freq2[char]++;
+    }
+
+    for(let char in freq1)
+    {
+        if(freq1[char] !== freq2[char])
+            return false;
+    }
+    return true
+}
+
+// console.log(anagrams("listen", "silent"));
+
+function longest(str)
+{
+    let words = str.split(" ");
+    let longest = '';
+
+    for(let word of words)
+    {
+        if(word.length > longest.length)
+            longest = word;
+    }
+    return longest
+}
+
+// console.log(longest("I am learning JavaScript today"));
+
+function removeDuplicate(str)
+{
+    let freq = {}
+    for(let i=0; i<str.length; i++)
+    {
+        let char = str[i]
+        if(freq[char] === undefined)
+        {
+            freq[char] = 1
+        }
+        else
+        freq[char]++;
+    }
+    const key = Object.keys(freq);
+    return key.join("")
+}
+
+// console.log(removeDuplicate("fboeoivnqeofihefwbuofhweoinef")); 
+
+function firstNonRepeating(str)
+{
+    let freq = {}
+    for(let i=0; i<str.length; i++)
+    {
+        let char = str[i]
+        if(freq[char] === undefined)
+        {
+            freq[char] = 1
+        }
+        else
+        freq[char]++;
+    }
+
+    for(let char of str)
+    {
+        if(freq[char] == 1)
+            return char;
+    }
+
+    return null;
+}
+
+console.log(firstNonRepeating("swiss"));
