@@ -128,4 +128,126 @@ function highestValue(arr, property)
     return maxObj;
 }
 
-console.log(highestValue(students, "marks"));
+// console.log(highestValue(students, "marks"));
+
+let nums = [4,3,2,7,8,2,3,1];
+function diss(nums)
+{
+    nums.sort((a,b) => a-b)
+    let result = [];
+    let freq = {}
+    for(let i=0; i<nums.length; i++)
+    {
+        let el = nums[i];
+        if(freq[el]===undefined)
+        {
+            freq[el] = 1;
+        }
+        else
+        {
+            freq[el]++;
+        }
+    }
+    let temp = (Object.keys(freq)).map(Number);
+    // return temp;
+    for(let i=0; i<temp.length; i++)
+    {
+        for(let j=i+1; j<temp.length; j++)
+        {
+            if((temp[i]++)!==temp[j])
+                result.push(temp[i]++)
+        }
+    }
+    return result;
+
+}
+
+// console.log(diss(nums));
+
+function findWords(words) 
+{
+    let firstRow =  "qwertyuiop";
+    let secondRow =  "asdfghjkl";
+    let thirdRow = "zxcvbnm";
+    let result = [];
+
+    for (let word of words) 
+    {
+        let lowerWord = word.toLowerCase();
+        if ([firstRow, secondRow, thirdRow].some(row =>
+            [...lowerWord].every(ch => row.includes(ch))
+        )) 
+        {
+            result.push(word);
+        }
+    }
+    return result;
+};
+
+function findMaxConsecutiveOnes(nums) 
+{
+    let counter = 0;
+    let currentCounter = 0;
+    for(let i = 0; i<nums.length; i++)
+    {
+        if(nums[i]===1)
+        {
+            currentCounter++;
+            if(currentCounter > counter)
+            {
+                counter = currentCounter;
+            }
+        }
+        else
+        {
+            currentCounter = 0;
+        }
+    }
+    return counter;
+};
+
+
+
+function thirdMax(nums) 
+{
+    nums.sort((a, b) => b - a);
+    let freq = {};
+    for(let i = 0; i < nums.length; i++)
+    {
+        let temp = nums[i];
+        if(freq[temp] === undefined)
+        {
+            freq[temp] = 1;
+        }
+        else
+        {
+            freq[temp]++;
+        }
+    }
+    const keys = Object.keys(freq).map(Number); 
+    keys.sort((a, b) => b - a);
+    if(keys.length < 3) return keys[0];
+    else return keys[2];
+};
+
+function majorityElement(nums) 
+{
+    let freq = {};
+    for(let i=0 ;i<nums.length; i++)
+    {
+        let temp = nums[i];
+        if(freq[temp]===undefined)
+        {
+            freq[temp] = 1;
+        }
+        else
+        {
+            freq[temp]++;
+        }
+    }    
+    for(let i in freq)
+    {
+        if(freq[i] > (nums.length)/2)
+        return parseInt(i);
+    }
+};
